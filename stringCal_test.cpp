@@ -2,6 +2,7 @@
 // Created by Jason on 2/15/2019.
 //
 
+#define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "stringCal.h"
 

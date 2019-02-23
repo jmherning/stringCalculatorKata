@@ -3,4 +3,4 @@ project(kataStringCal)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(kataStringCal main.cpp stringCal.cpp stringCal.h stringCal_test.cpp)
+add_executable(kataStringCal stringCal.cpp stringCal.h stringCal_test.cpp)
