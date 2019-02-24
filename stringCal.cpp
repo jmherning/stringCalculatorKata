@@ -4,7 +4,7 @@
 
 
 
-//TODO
+// TODO
 // 1)  An empty string returns zero
 // 2)  A single number returns the value
 // 3)  Two numbers, comma delimited, returns the sum
@@ -21,12 +21,34 @@
 
 
 #include "stringCal.h"
+using std::string;
+using std::size;
+using std::isdigit;
+using std::size_t;
 
 
-int stringCal(std::string s)
+int stringCal(string s)
 {
-    if(s == "")
+
+    if(s.empty())
         return 0;
-    if(std::size(s) == 1)
+    if(size(s) == 1)
         return 1;
+
+    int leftNum;
+    int rightNum;
+
+
+    size_t delPos;
+    delPos = s.find(',');
+
+    if(delPos) return ((int)s[delPos-1]-48) + ((int)s[delPos+1]-48);
+
+//    for(int i=0;i<s.length();i++){
+//        if(isdigit(s[i]) && s[i+1] == "," && isdigit(s[i+2]))
+//            return (int)s[i] + (int)s[i+2];
+//
+//    }
+
+
 }
