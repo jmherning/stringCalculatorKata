@@ -37,3 +37,14 @@ TEST_CASE("Two numbers, newline delimited, returns the sum")
     REQUIRE(stringCal("10\n2") == 12);
     REQUIRE(stringCal("10\n22") == 32);
 }
+
+// 5)  Three numbers, delimited either way, returns the sum
+TEST_CASE("Three numbers, delimited either way, returns the sum")
+{
+    REQUIRE(stringCal("22,3") == 25);
+    REQUIRE(stringCal("2,10") == 12);
+    REQUIRE(stringCal("11\n1") == 12);
+    REQUIRE(stringCal("2\n30") == 32);
+
+
+}

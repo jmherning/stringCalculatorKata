@@ -40,9 +40,14 @@ int stringCal(string s) {
     size_t pos;
     if (s.find(',') !=  string::npos)
     {
+
         pos = s.find(',');
-        return ((int) s[pos - 1] - 48) + ((int) s[pos + 1] - 48);
-    } else if (s.find('\n')!= string::npos)
+        int left = stoi(s.substr(0, pos));
+        int right = stoi(s.substr(pos + 1, s.length()));
+
+        return left + right;
+    }
+    else if (s.find('\n')!= string::npos)
     {
         pos = s.find('\n');
         int left = stoi(s.substr(0, pos));
