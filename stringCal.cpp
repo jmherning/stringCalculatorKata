@@ -21,34 +21,47 @@
 
 
 #include "stringCal.h"
+#include <iostream>
 using std::string;
 using std::size;
 using std::isdigit;
 using std::size_t;
+using std::stoi;
 
 
-int stringCal(string s)
-{
+int stringCal(string s) {
 
-    if(s.empty())
+    if (s.empty())
         return 0;
-    if(size(s) == 1)
+    if (size(s) == 1)
         return 1;
 
-    int leftNum;
-    int rightNum;
 
+    size_t pos;
+    if (s.find(',') !=  string::npos)
+    {
+        pos = s.find(',');
+        return ((int) s[pos - 1] - 48) + ((int) s[pos + 1] - 48);
+    } else if (s.find('\n')!= string::npos)
+    {
+        pos = s.find('\n');
+        int left = stoi(s.substr(0, pos));
+        int right = stoi(s.substr(pos + 1, s.length()));
 
-    size_t delPos;
-    delPos = s.find(',');
-
-    if(delPos) return ((int)s[delPos-1]-48) + ((int)s[delPos+1]-48);
-
-//    for(int i=0;i<s.length();i++){
-//        if(isdigit(s[i]) && s[i+1] == "," && isdigit(s[i+2]))
-//            return (int)s[i] + (int)s[i+2];
-//
-//    }
+        return left + right;
+    }
 
 
 }
+
+
+
+//}std::string delimiter = ">=";
+//
+//size_t pos = 0;
+//std::string token;
+//while ((pos = s.find(delimiter)) != std::string::npos) {
+//token = s.substr(0, pos);
+//std::cout << token << std::endl;
+//s.erase(0, pos + delimiter.length());
+//}
