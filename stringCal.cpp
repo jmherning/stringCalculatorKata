@@ -40,7 +40,7 @@ int stringCal(string s) {
     size_t pos;
     if (s.find(',') !=  string::npos)
     {
-
+ 
         pos = s.find(',');
         int left = stoi(s.substr(0, pos));
         int right = stoi(s.substr(pos + 1, s.length()));
